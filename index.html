@@ -1,0 +1,497 @@
+<!doctype html>
+<title>Foldnote Privacy Policy</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f6;
+    --surface: #ffffff;
+    --text: #2b2a28;
+    --subtle: #6b6864;
+    --accent: #4b484b;
+    --on-accent: #f6f5f3;
+    --line: #e6e3dd;
+    --line-strong: #cfcbc3;
+    color-scheme: light;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141413;
+      --surface: #1e1e1d;
+      --text: #ece9e4;
+      --subtle: #9c9891;
+      --accent: #f2f2f2;
+      --on-accent: #232222;
+      --line: #333230;
+      --line-strong: #47443f;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #141413;
+    --surface: #1e1e1d;
+    --text: #ece9e4;
+    --subtle: #9c9891;
+    --accent: #f2f2f2;
+    --on-accent: #232222;
+    --line: #333230;
+    --line-strong: #47443f;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    background: var(--bg);
+  }
+
+  body {
+    color: var(--text);
+    font-family: "Karla", ui-sans-serif, system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    padding-inline: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+
+  h1, h2 {
+    font-family: "Fraunces", ui-serif, "Hiragino Mincho ProN", "Noto Serif JP", serif;
+    font-weight: 500;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: var(--text); text-decoration-color: var(--line-strong); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+
+  .page {
+    max-width: 700px;
+    margin-inline: auto;
+    padding-block: 56px 96px;
+  }
+
+  header.masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+
+  .mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mark-glyph {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--accent);
+    position: relative;
+    flex: none;
+  }
+
+  .mark-glyph::before,
+  .mark-glyph::after {
+    content: "";
+    position: absolute;
+    background: var(--on-accent);
+  }
+
+  .mark-glyph::before {
+    left: 8px;
+    right: 8px;
+    top: 9px;
+    height: 2px;
+  }
+
+  .mark-glyph::after {
+    left: 8px;
+    right: 12px;
+    top: 15px;
+    height: 2px;
+  }
+
+  .mark-name {
+    font-family: "Fraunces", serif;
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  .lang-toggle button {
+    font: inherit;
+    font-family: "Karla", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: none;
+    background: transparent;
+    color: var(--subtle);
+    padding: 6px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  .lang-toggle button[aria-pressed="true"] {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .titleblock h1 {
+    font-size: clamp(30px, 5vw, 40px);
+    margin: 0 0 10px;
+  }
+
+  .meta {
+    color: var(--subtle);
+    font-size: 14px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .meta span::before {
+    content: "";
+  }
+
+  .lede {
+    margin: 28px 0 0;
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--text);
+    max-width: 62ch;
+  }
+
+  nav.toc {
+    margin: 40px 0 8px;
+    padding: 18px 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+
+  nav.toc p {
+    margin: 0 0 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--subtle);
+  }
+
+  nav.toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 7px;
+  }
+
+  nav.toc a {
+    font-size: 14.5px;
+    text-decoration: none;
+    color: var(--text);
+  }
+
+  nav.toc a:hover { text-decoration: underline; }
+
+  nav.toc .num {
+    color: var(--subtle);
+    font-variant-numeric: tabular-nums;
+    margin-right: 6px;
+  }
+
+  section.policy { margin-top: 12px; }
+
+  section.policy section {
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 24px;
+  }
+
+  section.policy section:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 40px;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  h2 .num {
+    font-family: "Karla", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--subtle);
+    letter-spacing: 0.02em;
+  }
+
+  section.policy p { margin: 0 0 14px; }
+  section.policy p:last-child { margin-bottom: 0; }
+
+  section.policy ul {
+    margin: 0 0 14px;
+    padding-left: 1.15em;
+  }
+
+  section.policy li { margin-bottom: 8px; }
+  section.policy li:last-child { margin-bottom: 0; }
+  section.policy li strong { font-weight: 700; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 0 0 14px;
+  }
+
+  .card p:last-child { margin-bottom: 0; }
+
+  footer.pagefoot {
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    color: var(--subtle);
+    font-size: 13.5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 480px) {
+    .page { padding-block: 40px 72px; }
+    nav.toc ol { gap: 9px; }
+  }
+</style>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="mark">
+      <div class="mark-glyph" aria-hidden="true"></div>
+      <span class="mark-name">Foldnote</span>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <button type="button" id="btn-ja" aria-pressed="true">日本語</button>
+      <button type="button" id="btn-en" aria-pressed="false">English</button>
+    </div>
+  </header>
+
+  <!-- ============================= 日本語 ============================= -->
+  <div id="lang-ja">
+
+    <div class="titleblock">
+      <h1>プライバシーポリシー</h1>
+      <div class="meta">
+        <span>制定日: 2026年9月23日</span>
+        <span>対象: Foldnote(iOS / Android)</span>
+      </div>
+      <p class="lede">Foldnoteは、フォルダで整理するメモアプリです。このページでは、本アプリがどのような情報を扱うかを説明します。結論から言うと、<strong>本アプリはあなたのデータを一切外部に送信しません。</strong></p>
+    </div>
+
+    <nav class="toc" aria-label="目次">
+      <p>目次</p>
+      <ol>
+        <li><a href="#ja-collect"><span class="num">01</span>収集する情報</a></li>
+        <li><a href="#ja-storage"><span class="num">02</span>データの保存場所</a></li>
+        <li><a href="#ja-device"><span class="num">03</span>端末の機能へのアクセス</a></li>
+        <li><a href="#ja-backup"><span class="num">04</span>バックアップ機能について</a></li>
+        <li><a href="#ja-children"><span class="num">05</span>子どものプライバシー</a></li>
+        <li><a href="#ja-changes"><span class="num">06</span>ポリシーの変更</a></li>
+        <li><a href="#ja-contact"><span class="num">07</span>お問い合わせ</a></li>
+      </ol>
+    </nav>
+
+    <section class="policy">
+
+      <section id="ja-collect">
+        <h2><span class="num">01</span>収集する情報</h2>
+        <p>本アプリは、氏名・メールアドレス・位置情報などの個人情報を一切収集しません。アクセス解析・広告・トラッキングの仕組みも組み込まれていません。アカウント登録も不要です。</p>
+      </section>
+
+      <section id="ja-storage">
+        <h2><span class="num">02</span>データの保存場所</h2>
+        <p>作成したフォルダ・メモ・チェックリスト・写真・手書きの内容は、すべてお使いの端末内にのみ保存されます。インターネットを介したサーバーへの送信は行われません。開発者を含め、あなた以外の誰も、あなたのメモの内容を見ることはできません。</p>
+      </section>
+
+      <section id="ja-device">
+        <h2><span class="num">03</span>端末の機能へのアクセス</h2>
+        <p>本アプリは、次の2つの機能について、端末に許可を求めることがあります。</p>
+        <ul>
+          <li><strong>Face ID / Touch ID(生体認証)</strong> — 設定画面の「アプリロック」機能をオンにした場合にのみ使用します。認証はApple/Googleが提供する端末の仕組みの中で完結しており、指紋や顔の情報そのものは本アプリからは一切見ることができません。</li>
+          <li><strong>写真ライブラリ</strong> — 「写真メモ」を作成する際、選んだ写真を本アプリの保存領域に取り込むためだけに使用します。取り込んだあとは、端末内のライブラリを継続的に参照することはありません。</li>
+        </ul>
+      </section>
+
+      <section id="ja-backup">
+        <h2><span class="num">04</span>バックアップ機能について</h2>
+        <p>設定画面の「バックアップ」機能を使うと、保存されているデータをまとめた1つのファイル(zip形式、任意でパスワード保護)を作成できます。</p>
+        <div class="card">
+          <p>このファイルは、あなた自身が「共有」または「保存」の操作をして初めて端末の外に出ます。本アプリが自動的にどこかへ送信することはありません。作成したバックアップファイルの管理・保管は、ユーザー自身の責任で行ってください。</p>
+        </div>
+      </section>
+
+      <section id="ja-children">
+        <h2><span class="num">05</span>子どものプライバシー</h2>
+        <p>本アプリは個人情報を収集しないため、年齢を問わずご利用いただけます。保護者の方が、お子様の代わりに本ポリシーの内容をご確認いただくことも可能です。</p>
+      </section>
+
+      <section id="ja-changes">
+        <h2><span class="num">06</span>ポリシーの変更</h2>
+        <p>本ポリシーの内容は、法令の変更やアプリの機能追加に応じて更新されることがあります。重要な変更がある場合は、このページ上の「制定日」を更新してお知らせします。</p>
+      </section>
+
+      <section id="ja-contact">
+        <h2><span class="num">07</span>お問い合わせ</h2>
+        <p>本ポリシーについてご質問がある場合は、下記までご連絡ください。</p>
+        <p><a href="mailto:app.contact001@gmail.com">app.contact001@gmail.com</a></p>
+      </section>
+
+    </section>
+
+    <footer class="pagefoot">
+      <span>© 2026 Foldnote</span>
+      <span>app.contact001@gmail.com</span>
+    </footer>
+
+  </div>
+
+  <!-- ============================= English ============================= -->
+  <div id="lang-en" hidden>
+
+    <div class="titleblock">
+      <h1>Privacy Policy</h1>
+      <div class="meta">
+        <span>Effective: September 23, 2026</span>
+        <span>Applies to: Foldnote (iOS / Android)</span>
+      </div>
+      <p class="lede">Foldnote is a folder-based note-taking app. This page explains what information the app handles. The short version: <strong>the app never sends your data anywhere.</strong></p>
+    </div>
+
+    <nav class="toc" aria-label="Table of contents">
+      <p>Contents</p>
+      <ol>
+        <li><a href="#en-collect"><span class="num">01</span>Information we collect</a></li>
+        <li><a href="#en-storage"><span class="num">02</span>Where your data is stored</a></li>
+        <li><a href="#en-device"><span class="num">03</span>Access to device features</a></li>
+        <li><a href="#en-backup"><span class="num">04</span>Backups</a></li>
+        <li><a href="#en-children"><span class="num">05</span>Children's privacy</a></li>
+        <li><a href="#en-changes"><span class="num">06</span>Changes to this policy</a></li>
+        <li><a href="#en-contact"><span class="num">07</span>Contact</a></li>
+      </ol>
+    </nav>
+
+    <section class="policy">
+
+      <section id="en-collect">
+        <h2><span class="num">01</span>Information we collect</h2>
+        <p>The app collects no personal information whatsoever &mdash; no name, email address, or location. It contains no analytics, no advertising, and no tracking of any kind. No account or sign-up is required to use it.</p>
+      </section>
+
+      <section id="en-storage">
+        <h2><span class="num">02</span>Where your data is stored</h2>
+        <p>Every folder, note, checklist, photo, and handwritten drawing you create is stored only on your device. Nothing is transmitted to a server over the internet. No one &mdash; including the developer &mdash; can see the contents of your notes.</p>
+      </section>
+
+      <section id="en-device">
+        <h2><span class="num">03</span>Access to device features</h2>
+        <p>The app may ask permission to use two device features:</p>
+        <ul>
+          <li><strong>Face ID / Touch ID (biometric authentication)</strong> &mdash; used only if you turn on the "App Lock" option in Settings. Authentication happens entirely within Apple's or Google's own system; the app itself never has access to your fingerprint or face data.</li>
+          <li><strong>Photo library</strong> &mdash; used only to copy a photo you pick into the app's own storage when creating a photo note. The app does not continue to browse your library afterward.</li>
+        </ul>
+      </section>
+
+      <section id="en-backup">
+        <h2><span class="num">04</span>Backups</h2>
+        <p>The "Backup" feature in Settings creates a single file (a zip archive, optionally password-protected) containing your data.</p>
+        <div class="card">
+          <p>This file leaves your device only when you explicitly choose to share or save it &mdash; the app never uploads it anywhere on its own. Keeping any backup file you create safe is your responsibility.</p>
+        </div>
+      </section>
+
+      <section id="en-children">
+        <h2><span class="num">05</span>Children's privacy</h2>
+        <p>Because the app collects no personal information, it is suitable for users of any age. A parent or guardian is welcome to review this policy on a child's behalf.</p>
+      </section>
+
+      <section id="en-changes">
+        <h2><span class="num">06</span>Changes to this policy</h2>
+        <p>This policy may be updated to reflect legal requirements or new app features. Any significant change will be noted by updating the "Effective" date at the top of this page.</p>
+      </section>
+
+      <section id="en-contact">
+        <h2><span class="num">07</span>Contact</h2>
+        <p>If you have any questions about this policy, please get in touch:</p>
+        <p><a href="mailto:app.contact001@gmail.com">app.contact001@gmail.com</a></p>
+      </section>
+
+    </section>
+
+    <footer class="pagefoot">
+      <span>© 2026 Foldnote</span>
+      <span>app.contact001@gmail.com</span>
+    </footer>
+
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var ja = document.getElementById('lang-ja');
+    var en = document.getElementById('lang-en');
+    var btnJa = document.getElementById('btn-ja');
+    var btnEn = document.getElementById('btn-en');
+
+    function show(lang) {
+      var isJa = lang === 'ja';
+      ja.hidden = !isJa;
+      en.hidden = isJa;
+      btnJa.setAttribute('aria-pressed', String(isJa));
+      btnEn.setAttribute('aria-pressed', String(!isJa));
+      try { localStorage.setItem('foldnote-privacy-lang', lang); } catch (e) {}
+    }
+
+    btnJa.addEventListener('click', function () { show('ja'); });
+    btnEn.addEventListener('click', function () { show('en'); });
+
+    var saved = null;
+    try { saved = localStorage.getItem('foldnote-privacy-lang'); } catch (e) {}
+
+    if (saved === 'en') {
+      show('en');
+    } else if (!saved && /^en/i.test(navigator.language || '')) {
+      show('en');
+    }
+  })();
+</script>
